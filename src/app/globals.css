@@ -3,31 +3,70 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+.logo {
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.logo:hover {
+	text-shadow: 0 0 10px #7a7a7a, 0 0 20px #727272, 0 0 40px #3d3d3d,
+		0 0 80px #ffffff;
+}
+
+/* add transform rotation to the img that have logo class */
+.logo img:hover {
+	transform: rotate(90deg);
+}
+
+.text-glow {
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.text-glow:hover {
+	box-shadow: 0 0 10px #7a7a7a, 0 0 20px #727272, 0 0 40px #3d3d3d,
+		0 0 80px #ffffff;
+	text-shadow: 0 0 10px #7a7a7a, 0 0 20px #727272, 0 0 40px #3d3d3d,
+		0 0 80px #ffffff;
+}
+
+.active {
+	background-image: url(/images/time-line-active.png);
+	background-repeat: no-repeat;
+	background-position: center 10px;
+	background-size: 75px;
+	background-clip: padding-box;
 }
